@@ -1,0 +1,18 @@
+# ------------ Plotting with layers ------------
+
+p <- ggplot(data=movies, aes(x=CriticalRating, y=AudienceRating, colour=Genre,
+                             size=BudgetMillions))
+
+p
+
+#points
+p + geom_point()
+
+#lines
+p + geom_line()
+
+#multiple layers
+
+p + geom_point() + geom_line()
+p + geom_line() + geom_point()
+p + geom_point() + geom_smooth()
