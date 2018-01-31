@@ -1,4 +1,4 @@
-# ------------ Creating a data frame------------
+# ------------ Creating a data frame ------------
 
 mydf <- data.frame(Countries_2012_Dataset, Codes_2012_Dataset, Regions_2012_Dataset)
 head(mydf)
