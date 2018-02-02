@@ -2,7 +2,7 @@
 movies <- read.csv(file.choose())
 
 head(movies)
-colnames(movies) <- c("Film", "Genre", "CriticalRating", "AudienceRating", "BudgetMillions", "Year")
+colnames(movies) <- c("Film", "Genre", "CriticRating", "AudienceRating", "BudgetMillions", "Year")
 head(movies)
 tail(movies)
 str(movies)
