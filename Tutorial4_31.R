@@ -1,3 +1,5 @@
+# ------------ Operations with matrices ------------
+
 Games
 rownames(Games)
 colnames(Games)
