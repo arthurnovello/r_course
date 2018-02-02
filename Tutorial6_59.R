@@ -1,6 +1,6 @@
 # ------------ Overriding Aesthetics ------------
 
-q <- ggplot(data=movies, aes(x=CriticalRating, y=AudienceRating, colour=Genre,
+q <- ggplot(data=movies, aes(x=CriticRating, y=AudienceRating, colour=Genre,
                              size=BudgetMillions))
 
 #add geom layer
@@ -8,7 +8,7 @@ q + geom_point()
 
 #overrinding aes
 #ex1
-q + geom_point(aes(size=CriticalRating))
+q + geom_point(aes(size=CriticRating))
 
 #ex2
 q + geom_point(aes(colour=BudgetMillions))

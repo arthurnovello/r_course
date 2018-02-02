@@ -1,0 +1,21 @@
+# ------------ Using Facets ------------
+
+#facets
+v <- ggplot(data = movies, aes(x = BudgetMillions))
+v + geom_histogram(binwidth = 10, aes(fill=Genre),
+                   colour = "Black") +
+  facet_grid(Genre~., scales = "free")
+
+#scatterplots
+w <- ggplot(data = movies, aes(x = CriticRating, y = AudienceRating,
+                               colour = Genre))
+w + geom_point(size = 3)
+
+#facets
+w + geom_point(size = 3) + facet_grid(.~Year)
+
+w + geom_point(size = 3) + facet_grid(Genre~Year)
+
+w + geom_point(aes(size = BudgetMillions)) + 
+  facet_grid(Genre~Year) + geom_smooth()
+#>>>1 will improve

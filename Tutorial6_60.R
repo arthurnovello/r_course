@@ -1,6 +1,6 @@
 # ------------ Setting VS Mappign ------------
 
-r <- ggplot(data=movies, aes(x=CriticalRating, y=AudienceRating))
+r <- ggplot(data=movies, aes(x=CriticRating, y=AudienceRating))
 r + geom_point()
 
 #Add colour

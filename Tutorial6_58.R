@@ -1,6 +1,6 @@
 # ------------ Plotting with layers ------------
 
-p <- ggplot(data=movies, aes(x=CriticalRating, y=AudienceRating, colour=Genre,
+p <- ggplot(data=movies, aes(x=CriticRating, y=AudienceRating, colour=Genre,
                              size=BudgetMillions))
 
 p
