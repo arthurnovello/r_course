@@ -5,6 +5,8 @@ head(movies)
 summary(movies)
 str(movies)
 
+library(ggplot2)
+
 # ------------ FilterData ------------
 levels(movies$Studio)
 studios <- (movies$Studio == "Buena Vista Studios") | (movies$Studio == "Fox") | (movies$Studio == "Paramount Pictures") | (movies$Studio == "Sony") | (movies$Studio == "Universal") | (movies$Studio == "WB")
@@ -15,7 +17,7 @@ moviesfilter
 
 colnames(moviesfilter) <- c("Day", "Director", "Genre", "Movie", "Release", "Studio", "AdjGross", "BudgetMillions", "GrossMillions", "IMDB", "MovieLens",
               "OverseasMillions", "OverseasPercentage", "ProfitMillions", "ProfitPercentage", "RuntimeMinutes", "USMillions", "USPercentage")
-plot <- ggplot(data = moviesfilter, aes(x = Genre, y = USPercentage, size = BudgetMillions))
+plot <- ggplot(data = moviesfilter, aes(x = Genre, y = USPercentage))
 
 plot + geom_boxplot() + geom_jitter(aes(colour = Studio))
 
@@ -23,17 +25,16 @@ plot + geom_boxplot() + geom_jitter(aes(colour = Studio))
 
 plot + geom_boxplot() + geom_jitter(aes(colour = Studio)) + ylim(0, 80) + coord_cartesian(xlim = c(1, 2, 3, 5, 8))
 levels(movies$Genre)
-plot + geom_jitter(aes(colour = Studio)) + 
+plot + geom_jitter(aes(colour = Studio, size = BudgetMillions)) + 
   geom_boxplot(alpha = 0.6) + 
   coord_cartesian(ylim = c(0, 80)) + 
   xlim("action", "adventure", "animation", "comedy", "drama")
 
 # ------------ Themes ------------
 
-plot + geom_boxplot() + geom_jitter(aes(colour = Studio)) + ylim(0, 80) + coord_cartesian(xlim = c(1, 2, 3, 5, 8))
 levels(movies$Genre)
-plot + geom_jitter(aes(colour = Studio)) + 
-  geom_boxplot(alpha = 0.6) + 
+plot + geom_jitter(aes(colour = Studio, size = BudgetMillions)) + 
+  geom_boxplot(alpha = 0.6, outlier.colour = NA) + 
   ylim(0, 80) + 
   xlim("action", "adventure", "animation", "comedy", "drama") +
   xlab("Genre") +
