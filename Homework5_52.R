@@ -30,6 +30,8 @@ merged2013 <- merge(stats2013, lifeExpcDf2013, by.x = "Country.Code", by.y = "Co
 merged2013
 
 #Ploting the Graphs
+library(ggplot2)
+
 qplot(data = merged1960, x = Fertility.Rate, y = Life.Expectancy, colour = Region,
       size= I(4), shape = I(19), alpha = I(0.6))
 qplot(data = merged2013, x = Fertility.Rate, y = Life.Expectancy, colour = Region,
